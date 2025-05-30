@@ -1,5 +1,4 @@
 const express = require('express');
-const express = require('express');
 const healthController = require('../controllers/health');
 const quizController = require('../controllers/quiz');
 const multer = require('multer');
