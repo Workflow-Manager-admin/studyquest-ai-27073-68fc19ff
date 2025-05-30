@@ -10,7 +10,7 @@ const LLM_BASE_URL = process.env.LLM_API_BASE || 'https://api.openai.com/v1/chat
 async function generate(prompt) {
   if (!OPENAI_API_KEY) {
     // Mock: For dev/demo without OpenAI
-    return `[{"id":"1","question":"Sample Q: What color is the sky?","options":["A. Blue","B. Green","C. Red","D. Yellow"],"correct":"A","explanation":"Usually blue due to light scattering."}]`;
+    return '[{"id":"1","question":"Sample Q: What color is the sky?","options":["A. Blue","B. Green","C. Red","D. Yellow"],"correct":"A","explanation":"Usually blue due to light scattering."}]';
   }
   const response = await fetch(LLM_BASE_URL, {
     method: 'POST',
@@ -25,7 +25,7 @@ async function generate(prompt) {
       max_tokens: 1024,
     }),
   });
-  
+
   if (!response.ok) {
     throw new Error(`LLM API error: ${response.status}`);
   }
